@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :stocks
  Stockwatch::Application.routes.draw do
    scope :api do
-    resources :stocks, defaults: {format: :json}
+    resources :stocks, only: [:index], defaults: {format: :json}
    end
    root 'watchlist#index'
  end
